@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/revenue_recovery.db
+.pytest_cache/
+.DS_Store

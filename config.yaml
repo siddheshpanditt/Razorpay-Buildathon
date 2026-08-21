@@ -1,0 +1,23 @@
+# Stopping rules
+MAX_ATTEMPTS_PER_CASE: 3
+COOLDOWN_HOURS: 4
+HIGH_VALUE_ESCALATION_THRESHOLD_INR: 50000   # auto-escalate if amount > this
+
+# Contact window (IST, Asia/Kolkata)
+CONTACT_WINDOW_START_HOUR: 9    # 9 AM
+CONTACT_WINDOW_END_HOUR: 21     # 9 PM
+CONTACT_WINDOW_DAYS: [0, 1, 2, 3, 4, 5]  # Mon=0 … Sat=5 (Sun excluded)
+
+# Simulated recovery rates per intervention (0.0 = never recovers in simulator)
+# payment_failure interventions
+RECOVERY_RATES:
+  retry_now: 0.65
+  retry_scheduled: 0.45
+  request_payment_update: 0.40
+  offer_alternate_method: 0.35
+  escalate_human: 0.0
+  suppress: 0.0
+  # checkout_abandonment interventions
+  reminder_nudge: 0.30
+  discount_offer: 0.50
+  simplify_checkout_flag: 0.25
